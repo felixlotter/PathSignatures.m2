@@ -47,7 +47,6 @@ tensorParametrization(NCRingElement) := opts -> (f) -> (
         words := apply(lm, i-> value(wordString i));
         R = ring (product (keys vwtable));
         if(instance(R,QuotientRing)) then error("Expected free polynomial ring.");
-        if(#gens R > length(words)) then error("More variables in ring than words in tensor");
         scan(words, i-> (
                 if (not isMember(i,values vwtable)) then (
                     print("Warning: No variable associated to word " | toString(i));
